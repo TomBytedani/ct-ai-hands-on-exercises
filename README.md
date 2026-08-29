@@ -10,12 +10,15 @@ The exercises are personal study work and are not official ISTQB training materi
 | --- | --- | --- |
 | HO-3.1.3 (H2) | [Create a machine learning model](./03_01_03_create_ml_model/README.md) | Ready |
 | HO-3.2.2 (H2) | [Prepare data for a machine learning model](./03_02_02_prepare_ml_data/README.md) | Ready |
+| HO-3.3.2 (H2) | [Evaluate a machine-learning model](./03_03_02_evaluate_ml_model/README.md) | Ready |
+| HO-3.3.3 (H2) | [Compare models and dataset combinations](./03_03_03_compare_models_datasets/README.md) | Ready |
 
 ## Starter and completed work
 
-Each clean guided environment is marked with a starter tag, currently
-`lab-3.1.3-starter` and `lab-3.2.2-starter`. These provide stable references
-after notebooks and learning logs are completed on study branches.
+Each clean guided environment is marked with a starter tag: `lab-3.1.3-starter`,
+`lab-3.2.2-starter`, `lab-3.3.2-starter`, and `lab-3.3.3-starter`. These provide
+stable references after notebooks and learning logs are completed on study
+branches.
 
 For each completed assignment:
 
