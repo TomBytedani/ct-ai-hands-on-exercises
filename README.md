@@ -9,17 +9,20 @@ The exercises are personal study work and are not official ISTQB training materi
 | Objective | Lab | Status |
 | --- | --- | --- |
 | HO-3.1.3 (H2) | [Create a machine learning model](./03_01_03_create_ml_model/README.md) | Ready |
+| HO-3.2.2 (H2) | [Prepare data for a machine learning model](./03_02_02_prepare_ml_data/README.md) | Ready |
 
 ## Starter and completed work
 
-The first published commit is the clean guided environment. It is also marked with the Git tag `lab-3.1.3-starter`, providing a stable reference even after the notebook and learning log are completed.
+Each clean guided environment is marked with a starter tag, currently
+`lab-3.1.3-starter` and `lab-3.2.2-starter`. These provide stable references
+after notebooks and learning logs are completed on study branches.
 
 For each completed assignment:
 
-1. Make predictions and explanations in the learning log before revealing results.
-2. Complete the notebook without removing the reasoning prompts or checks.
+1. Follow the lab README and write at each notebook checkpoint in the location it specifies.
+2. Complete the notebook without removing its reasoning prompts or checks.
 3. Clear incidental debug output while retaining outputs that support the conclusions.
-4. Commit the notebook and learning log together with a message such as `Complete HO-3.1.3 study exercise`.
+4. Commit the notebook and learning log together with a message such as `Complete HO-3.2.2 study exercise`.
 
 The resulting Git history separates the reusable starter from the evidence of study.
 
