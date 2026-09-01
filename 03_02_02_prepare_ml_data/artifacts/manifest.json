@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "dataset": "UCI Bank Marketing",
+    "variant": "bank-additional-full.csv",
+    "sha256": "74ADFC578BF77A7FF4BB1BA4A9F8709D9E3C6907342959C2C8416847E0AFB4D8",
+    "rows": 41188
+  },
+  "prediction_time": "before_scheduled_call",
+  "target": {
+    "column": "subscribed",
+    "raw_mapping": {
+      "no": 0,
+      "yes": 1
+    },
+    "positive_class": 1
+  },
+  "columns": {
+    "metadata": [
+      "source_row_id"
+    ],
+    "full_features": [
+      "age",
+      "job",
+      "marital",
+      "education",
+      "default",
+      "housing",
+      "loan",
+      "contact",
+      "month",
+      "day_of_week",
+      "campaign",
+      "pdays",
+      "previous",
+      "poutcome",
+      "emp_var_rate",
+      "cons_price_idx",
+      "cons_conf_idx",
+      "euribor3m",
+      "nr_employed",
+      "previously_contacted"
+    ],
+    "categorical_features": [
+      "job",
+      "marital",
+      "education",
+      "default",
+      "housing",
+      "loan",
+      "contact",
+      "month",
+      "day_of_week",
+      "poutcome"
+    ],
+    "numeric_features": [
+      "age",
+      "campaign",
+      "pdays",
+      "previous",
+      "emp_var_rate",
+      "cons_price_idx",
+      "cons_conf_idx",
+      "euribor3m",
+      "nr_employed",
+      "previously_contacted"
+    ]
+  },
+  "preparation": {
+    "excluded_features": {
+      "duration": "unavailable before the scheduled call"
+    },
+    "unknown_policy": "explicit_category",
+    "pdays_sentinel": 999,
+    "derived_features": [
+      "previously_contacted"
+    ],
+    "exact_matching_rows_beyond_first": 12,
+    "exact_matches_retained": true
+  },
+  "split": {
+    "method": "two stratified train_test_split calls",
+    "seed": 42,
+    "proportions": {
+      "train": 0.6,
+      "validation": 0.2,
+      "test": 0.2
+    },
+    "sizes": {
+      "train": 24712,
+      "validation": 8238,
+      "test": 8238
+    },
+    "roles": {
+      "train": "fit preprocessing and model parameters",
+      "validation": "evaluate baseline and compare development candidates",
+      "test": "one final check after HO-3.3.3 selection"
+    }
+  },
+  "baseline_model": {
+    "artifact": "baseline_model.joblib",
+    "pipeline_steps": [
+      "preprocessor",
+      "classifier"
+    ],
+    "classifier": "LogisticRegression",
+    "parameters": {
+      "solver": "lbfgs",
+      "C": 1.0,
+      "max_iter": 2000,
+      "class_weight": null
+    },
+    "trained_on": "train",
+    "performance_metrics_included": false
+  },
+  "versions": {
+    "python": "3.14.4",
+    "pandas": "3.0.0",
+    "scikit_learn": "1.9.0",
+    "joblib": "1.5.3"
+  }
+}

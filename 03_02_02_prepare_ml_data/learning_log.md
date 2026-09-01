@@ -1,13 +1,18 @@
 # Lab 3.2.2 post-lab learning log
 
-**Date:**
+**Date:** 2026.09.01
 
-**Starting confidence (1–5):**
+**Starting confidence (1–5):** 2
 
-**Ending confidence (1–5):**
+**Ending confidence (1–5):** 4
 
 Open this file only after the notebook tells you that the four handoff artifacts
 have been created. Answer without reopening hints first.
+
+Use your own words. This is a retrieval exercise, not a terminology or exact-
+spelling test. If needed, remember that the prediction is made immediately
+before the scheduled call starts; no information learned during or after the
+call is a valid input.
 
 ## 1. Reconstruct the preparation workflow
 
@@ -15,61 +20,22 @@ Give one concrete example from the lab for each activity:
 
 | Activity | What I did | Why it belonged to this activity |
 | --- | --- | --- |
-| Data acquisition | | |
-| Data preprocessing | | |
-| Feature engineering | | |
-| Exploratory data analysis | | |
+| Data acquisition | Downloaded the csv dataset | it just did |
+| Data preprocessing | Several things, along OneHotEncoder, StandardSampler, SimpleImputer | |
+| Feature engineering | Since 999 was removed from "pdays" column we track wether a client was previously contacted by introducing a new feature "previously_contacted" | |
+| Exploratory data analysis | Visualized various plots and data to make informed decisions | |
 
-Why can these activities be reordered or repeated in a real project?
 
-## 2. Defend the decisions
+## 2. Explain why each preparation choice was made
 
 Complete each explanation in one or two sentences.
 
-- `duration` was removed because:
-- Literal `unknown` values were retained as a category because:
-- `pdays=999` was transformed rather than treated as 999 elapsed days because:
-- `previously_contacted` was added because:
-- Exact matching rows were retained because:
-- Numerical scaling was performed because:
-- Data augmentation and sampling were not performed because:
+- `duration` (the completed call length) was removed because: it's recorded after the client calls, which is not predictive for the model we want to train
+- Literal `unknown` values were retained as a category because: they may still be useful and we don't have context on the substitutes
+- `pdays=999` was transformed rather than treated as 999 elapsed days because
+  the source says: it would be treated like the other numerical values and skew the average upwards dramatically
+- `previously_contacted` (a new 0/1 field) was added because: 999 was removed
+- Exact matching rows were retained because: not enough evidence to mark them as duplicate
+- Numerical scaling was performed because: not sure
+- Data augmentation and sampling were not performed because: there wasn't the need for it
 
-Which decision would be unsafe to make from a column name alone, without the
-source documentation?
-
-## 3. Explain the evidence boundary
-
-- Why was EDA performed on training data rather than validation or test feature
-  values?
-- Which preprocessing operations learned values from the training data?
-- How does the fitted pipeline apply those learned values consistently to later
-  operational examples?
-- Why is the saved validation set allowed to influence later model comparison,
-  while the test set must remain untouched?
-
-## 4. Explain the handoff
-
-In five or six sentences, explain what another practitioner receives from this
-exercise: the prepared data, split assignments, fitted model pipeline, and
-manifest. Distinguish the semantic dataset from the learned preprocessing
-inside the model pipeline. State what has **not** yet been learned about model
-quality.
-
-## 5. Retrieval check
-
-1. Is every outlying or repeated row necessarily defective? What evidence is
-   needed before removing it?
-2. Why would replacing `pdays=999` with zero without an indicator lose
-   information?
-3. Why can a field be highly predictive and still be invalid for the intended
-   model?
-4. If a new operational category appears later, what pipeline behavior did the
-   lab configure?
-5. Name one reason the historical dataset should not be treated as evidence for
-   a contemporary production targeting system.
-
-## 6. Close
-
-- One-sentence intuition I want to retain:
-- One preparation decision I initially misunderstood:
-- One question to revisit before HO-3.3.2:
