@@ -12,11 +12,13 @@ The exercises are personal study work and are not official ISTQB training materi
 | HO-3.2.2 (H2) | [Prepare data for a machine learning model](./03_02_02_prepare_ml_data/README.md) | Ready |
 | HO-3.3.2 (H2) | [Evaluate a machine-learning model](./03_03_02_evaluate_ml_model/README.md) | Ready |
 | HO-3.3.3 (H2) | [Compare models and dataset combinations](./03_03_03_compare_models_datasets/README.md) | Ready |
+| HO-3.4.2 (H1) | [Watch a perceptron learn AND](./03_04_02_perceptron/README.md) | Ready |
 
 ## Starter and completed work
 
 Each clean guided environment is marked with a starter tag: `lab-3.1.3-starter`,
-`lab-3.2.2-starter`, `lab-3.3.2-starter`, and `lab-3.3.3-starter`. These provide
+`lab-3.2.2-starter`, `lab-3.3.2-starter`, `lab-3.3.3-starter`, and
+`lab-3.4.2-starter`. These provide
 stable references after notebooks and learning logs are completed on study
 branches.
 
@@ -25,7 +27,7 @@ For each completed assignment:
 1. Follow the lab README and write at each notebook checkpoint in the location it specifies.
 2. Complete the notebook without removing its reasoning prompts or checks.
 3. Clear incidental debug output while retaining outputs that support the conclusions.
-4. Commit the notebook and learning log together with a message such as `Complete HO-3.2.2 study exercise`.
+4. Commit the notebook and learning log (where the lab uses one) together with a message such as `Complete HO-3.2.2 study exercise`. Lab 3.4.2 keeps all observations in the notebook.
 
 The resulting Git history separates the reusable starter from the evidence of study.
 
